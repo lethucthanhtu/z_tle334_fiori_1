@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "es2022",
+    "skipLibCheck": true,
+    "allowJs": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "moduleResolution": "node",
+    "rootDir": "./webapp",
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "ztle334fiori1/*": [
+        "./webapp/*"
+      ],
+      "unit/*": [
+        "./webapp/test/unit/*"
+      ],
+      "integration/*": [
+        "./webapp/test/integration/*"
+      ]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@sapui5/ts-types-esm"
+    ]
+  },
+  "include": [
+    "./webapp/**/*"
+  ],
+  "exclude": [
+    "./webapp/test/unit/unitTests.qunit.ts",
+    "./webapp/test/integration/NavigationJourney.ts",
+    "./webapp/test/integration/opaTests.qunit.ts",
+    "./webapp/test/unit/controller/MainViewPage.controller.ts"
+    ]
+}
