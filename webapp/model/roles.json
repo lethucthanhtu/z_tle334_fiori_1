@@ -1,0 +1,12 @@
+{
+  "roles": [
+    {
+      "key": "admin",
+      "text": "Admin"
+    },
+    {
+      "key": "employee",
+      "text": "Employee"
+    }
+  ]
+}

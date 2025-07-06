@@ -4,6 +4,13 @@ specVersion: "3.1"
 metadata:
   name: ztle334fiori1
 type: application
+framework:
+  name: OpenUI5
+  version: "1.136.0" #MainVersion#
+  libraries:
+    - name: sap.m
+    - name: sap.ui.core
+    - name: themelib_sap_horizon
 server:
   customMiddleware:
     - name: fiori-tools-proxy
@@ -28,7 +35,7 @@ server:
       afterMiddleware: fiori-tools-appreload
       configuration:
         flp:
-          theme: sap_fiori_3_dark
+          theme: sap_horizon_dark
     - name: ui5-tooling-transpile-middleware
       afterMiddleware: compression
       configuration:

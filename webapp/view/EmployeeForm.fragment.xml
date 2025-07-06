@@ -1,0 +1,53 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+>
+  <Dialog
+    id="employeeDialog"
+    title="{formModel>/dialogTitle}"
+  >
+    <VBox id="_IDGenVBox3" class="sapUiSmallMargin">
+      <Input id="_IDGenInput"
+        value="{formModel>/employee/emp_ID}"
+        placeholder="Employee ID"
+        editable="{formModel>/isCreate}"
+      />
+      <Input id="_IDGenInput1"
+        value="{formModel>/employee/first_name}"
+        placeholder="First Name"
+      />
+      <Input id="_IDGenInput2"
+        value="{formModel>/employee/last_name}"
+        placeholder="Last Name"
+      />
+      <Input id="_IDGenInput3"
+        value="{formModel>/employee/email}"
+        placeholder="Email"
+      />
+      <Input id="_IDGenInput4"
+        value="{formModel>/employee/phone_no}"
+        placeholder="Phone No"
+      />
+      <Input id="_IDGenInput5"
+        value="{formModel>/employee/manager}"
+        placeholder="Manager"
+      />
+      <Input id="_IDGenInput6"
+        value="{formModel>/employee/subteam}"
+        placeholder="Subteam"
+      />
+    </VBox>
+    <beginButton>
+      <Button id="_IDGenButton7"
+        text="Save"
+        press="onSaveEmployee"
+      />
+    </beginButton>
+    <endButton>
+      <Button id="_IDGenButton8"
+        text="Cancel"
+        press="onCancelEmployee"
+      />
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>

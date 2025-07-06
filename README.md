@@ -11,7 +11,7 @@
 |**Module Name**<br>z_tle334_fiori_1|
 |**Application Title**<br>App Title|
 |**Namespace**<br>|
-|**UI5 Theme**<br>sap_fiori_3_dark|
+|**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.84.14|
 |**Enable Code Assist Libraries**<br>True|
 |**Enable TypeScript**<br>True|

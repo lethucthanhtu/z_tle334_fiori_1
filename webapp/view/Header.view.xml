@@ -1,0 +1,12 @@
+<mvc:View
+    controllerName="ztle334fiori1.controller.Header"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+>
+    <Button
+        id="_IDGenButton1"
+        text="{i18n>showRoleSelectDialogText}"
+        press=".onShowRoleSelectDialog"
+        icon="sap-icon://role"
+    />
+</mvc:View>

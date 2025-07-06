@@ -46,7 +46,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.84.14",
+      "minUI5Version": "1.136.0",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {}
@@ -67,6 +67,18 @@
         "dataSource": "mainService",
         "preload": true,
         "settings": {}
+      },
+      "strategy": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/strategies.json"
+      },
+      "role": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/roles.json"
+      },
+      "employee": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/employees.json"
       }
     },
     "resources": {
@@ -93,6 +105,21 @@
           "target": [
             "TargetMainView"
           ]
+        },
+        {
+          "pattern": "detail/{strat_id}",
+          "name": "detail",
+          "target": "detail"
+        },
+        {
+          "pattern": "strategy/{strat_id}",
+          "name": "strategy",
+          "target": "strategy"
+        },
+        {
+          "pattern": "employee/{emp_id}",
+          "name": "employee",
+          "target": "employee"
         }
       ],
       "targets": {
@@ -102,6 +129,13 @@
           "clearControlAggregation": false,
           "viewId": "MainView",
           "viewName": "MainView"
+        },
+        "strategy": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Strategy",
+          "viewName": "Strategy"
         }
       }
     },

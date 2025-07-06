@@ -1,0 +1,54 @@
+{
+  "employees": [
+    {
+      "emp_ID": "00000001",
+      "first_name": "Tu",
+      "last_name": "Le",
+      "email": "tuthucthanh.le@dxc.com",
+      "phone_no": "0984326742",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "Development",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000002",
+      "first_name": "Emily",
+      "last_name": "Santos",
+      "email": "emily.santos@dxc.com",
+      "phone_no": "09182345678",
+      "manager": "Michael Lee",
+      "subteam": "Analytics",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000003",
+      "first_name": "John",
+      "last_name": "Tan",
+      "email": "john.tan@dxc.com",
+      "phone_no": "09193456789",
+      "manager": "Sophia Martinez",
+      "subteam": "Operations",
+      "strat_id": "BO004"
+    },
+    {
+      "emp_ID": "00000004",
+      "first_name": "Sophia",
+      "last_name": "Lim",
+      "email": "sophia.lim@dxc.com",
+      "phone_no": "09104567890",
+      "manager": "David Brown",
+      "subteam": "HR",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000005",
+      "first_name": "Michael",
+      "last_name": "Go",
+      "email": "michael.go@dxc.com",
+      "phone_no": "09115678901",
+      "manager": "John Smith",
+      "subteam": "Finance",
+      "strat_id": "CD005"
+    }
+  ]
+}

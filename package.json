@@ -39,5 +39,8 @@
     "unit-test": "fiori run --config ./ui5-mock.yaml --open 'test/unit/unitTests.qunit.html'",
     "gen-types": "npx @sap-cloud-sdk/generator --input ./webapp/localService/mainService/metadata.xml --outputDir ./webapp/generated"
   },
-  "sapuxLayer": "CUSTOMER_BASE"
+  "sapuxLayer": "CUSTOMER_BASE",
+  "dependencies": {
+    "@sap-cloud-sdk/odata-v2": "^4.0.2"
+  }
 }
