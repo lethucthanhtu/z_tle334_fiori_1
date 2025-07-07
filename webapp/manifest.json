@@ -79,6 +79,10 @@
       "employee": {
         "type": "sap.ui.model.json.JSONModel",
         "uri": "model/employees.json"
+      },
+      "subteam": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/subteams.json"
       }
     },
     "resources": {

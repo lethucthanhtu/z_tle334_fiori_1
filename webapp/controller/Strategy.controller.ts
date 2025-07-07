@@ -7,7 +7,7 @@ import FilterOperator from "sap/ui/model/FilterOperator";
 import ListBinding from "sap/ui/model/ListBinding";
 import Table from "sap/m/Table";
 import ObjectHeader from "sap/m/ObjectHeader";
-import { Employee, type Strategy } from "ztle334fiori1/generated/local.types";
+import { Employee, Subteam, type Strategy } from "ztle334fiori1/generated/local.types";
 import JSONModel from "sap/ui/model/json/JSONModel";
 import Button from "sap/m/Button";
 import Dialog from "sap/m/Dialog";
@@ -16,6 +16,7 @@ import ColumnListItem from "sap/m/ColumnListItem";
 import Context from "sap/ui/model/Context";
 import BindingMode from "sap/ui/model/BindingMode";
 import MessageBox, { Action } from "sap/m/MessageBox";
+import Select from "sap/m/Select";
 
 /**
  * @namespace ztle334fiori1.controller
@@ -66,10 +67,32 @@ export default class StrategyView extends Controller {
 
   public onFitlerSearch(oEvent: Event): void {
     const sQuery = (oEvent.getParameter("query") as String).trim();
-    console.log("onFilterSearch", oEvent);
-    console.log("query", sQuery);
-
     this._filter([new Filter("email", FilterOperator.Contains, sQuery)]);
+  }
+
+  private _getUserRole(): string {
+    return this.getOwnerComponent()
+      .getModel("role")?.getProperty("/current_role") as string;
+  }
+
+  private _getCurrentUser(): Employee | undefined {
+    const sEmpId = this.getOwnerComponent()
+      .getModel("role")?.getProperty("/current_eid") as string;
+    if (!sEmpId) return undefined;
+
+    const oModel = this.getView().getModel("employee") as JSONModel;
+    const aEmployees = oModel.getProperty("/employees") as Employee[];
+
+    return aEmployees.find((e) => e.emp_ID === sEmpId);
+  }
+
+  private _checkAdminAccess(message?: string): boolean {
+    const sRole = this._getUserRole();
+    if (sRole.toLowerCase() !== "admin") {
+      MessageToast.show(message || "You are not authorized to perform this action.");
+      return false;
+    }
+    return true;
   }
 
   public onCreateEmployee(): void {
@@ -80,15 +103,7 @@ export default class StrategyView extends Controller {
     oEvent?: Event,
     isCreate: boolean = false
   ): Promise<void> {
-    if (!isCreate) {
-      const sRole = this.getOwnerComponent()
-        .getModel("roleModel")
-        ?.getProperty("/selectedRole");
-      if (sRole !== "Admin") {
-        MessageToast.show("You are not authorized to edit employee records.");
-        return;
-      }
-    }
+    if (!isCreate && !this._checkAdminAccess("You must be an admin to edit employee records.")) return;
 
     const oView = this.getView();
     const oModel = oView.getModel("employee") as JSONModel;
@@ -96,39 +111,55 @@ export default class StrategyView extends Controller {
     let oEmployee: Employee;
     let sPath: string | undefined;
 
-    if (isCreate)
-      oEmployee = {
-        emp_ID: "",
-        first_name: "",
-        last_name: "",
-        email: "",
-        phone_no: "",
-        manager: "",
-        subteam: "",
-        strat_id: this._getCurrentStratId(),
-      };
-    else {
-      if (!oEvent) {
-        MessageToast.show("No event source for edit.");
-        return;
-      }
+    const sRole = this._getUserRole().toLowerCase();
+    const oCurrentUser = this._getCurrentUser();
+    console.log(`Current user role: ${sRole}`, oCurrentUser);
 
-      const oButton = oEvent.getSource() as Button;
-      const oListItem = oButton.getParent()?.getParent() as ColumnListItem;
-      if (!oListItem) {
-        MessageToast.show("Failed to identify row for edit.");
-        return;
-      }
-
-      const oContext = oListItem.getBindingContext("employee") as Context;
-      if (!oContext) {
-        MessageToast.show("No context found for edit.");
-        return;
-      }
-
-      sPath = oContext.getPath();
-      oEmployee = { ...oModel.getProperty(sPath) }; // exact data for editing
+    if (sRole === "employee" && oCurrentUser) {
+      oEmployee = oCurrentUser
+      sPath = `/employees/${oCurrentUser.emp_ID}`;
+      isCreate = false;
     }
+    else
+
+      if (isCreate)
+        oEmployee = {
+          emp_ID: "",
+          first_name: "",
+          last_name: "",
+          email: "",
+          phone_no: "",
+          manager: "",
+          subteam: "HR",
+          strat_id: this._getCurrentStratId(),
+        };
+      else {
+        if (!oEvent) {
+          MessageToast.show("No event source for edit.");
+          return;
+        }
+
+        const oButton = oEvent.getSource() as Button;
+        const oListItem = oButton.getParent()?.getParent() as ColumnListItem;
+        if (!oListItem) {
+          MessageToast.show("Failed to identify row for edit.");
+          return;
+        }
+
+        const oContext = oListItem.getBindingContext("employee") as Context;
+        if (!oContext) {
+          MessageToast.show("No context found for edit.");
+          return;
+        }
+
+        const oSelect = this.byId("subteamSelect") as Select;
+        const sSubteam = oSelect?.getSelectedKey();
+        sPath = sPath || oContext.getPath();
+        oEmployee = {
+          ...oModel.getProperty(sPath),
+          subteam: sSubteam,
+        }; // exact data for editing
+      }
 
     // Create temporary model for dialog binding
     const oDialogModel = new JSONModel({
@@ -158,19 +189,24 @@ export default class StrategyView extends Controller {
     isCreate: boolean,
     existingEmployees: Employee[]
   ): string[] {
-    const VALID_SUBTEAMS = [
-      "Analytics",
-      "Development",
-      "Operations",
-      "HR",
-      "Finance",
-    ];
+    // const VALID_SUBTEAMS = [
+    //   "Analytics",
+    //   "Development",
+    //   "Operations",
+    //   "HR",
+    //   "Finance",
+    // ];
+    const VALID_SUBTEAMS = (
+      (this.getOwnerComponent().getModel('subteam') as JSONModel)
+        .getProperty('/subteams') as Subteam[]
+    ).map((s: Subteam) => s.key);
+
     const errors: string[] = [];
 
     // Emp_ID
-    if (!oEmployee.emp_ID || !/^\d{8}$/.test(oEmployee.emp_ID)) {
+    if (!oEmployee.emp_ID || !/^\d{8}$/.test(oEmployee.emp_ID))
       errors.push("Emp_ID is required, numeric, and must be 8 digits.");
-    } else if (
+    else if (
       isCreate &&
       existingEmployees.some((e) => e.emp_ID === oEmployee.emp_ID)
     )
@@ -179,7 +215,7 @@ export default class StrategyView extends Controller {
     // First Name
     if (
       !oEmployee.first_name ||
-      !/^[A-Za-z]+$/.test(oEmployee.first_name) ||
+      !/^[\p{L} ]+$/u.test(oEmployee.first_name) ||
       oEmployee.first_name.length > 50
     )
       errors.push("First name is required, letters only, max 50 characters.");
@@ -187,7 +223,7 @@ export default class StrategyView extends Controller {
     // Last Name
     if (
       !oEmployee.last_name ||
-      !/^[A-Za-z]+$/.test(oEmployee.last_name) ||
+      !/^[\p{L} ]+$/u.test(oEmployee.last_name) ||
       oEmployee.last_name.length > 50
     )
       errors.push("Last name is required, letters only, max 50 characters.");
@@ -259,7 +295,7 @@ export default class StrategyView extends Controller {
       onClose: (sAction: Action) => {
         switch (sAction) {
           case Action.OK:
-            if (isCreate) existingEmployees.push(oEmployee);
+            if (isCreate) existingEmployees.unshift(oEmployee);
             else {
               const index = existingEmployees.findIndex(
                 (e) => e.emp_ID === oEmployee.emp_ID
@@ -288,16 +324,9 @@ export default class StrategyView extends Controller {
   }
 
   public onDeleteEmployees(): void {
+    if (!this._checkAdminAccess("You are not authorized to delete employee records.")) return
+
     const oView = this.getView();
-
-    const sRole = this.getOwnerComponent()
-      .getModel("roleModel")
-      ?.getProperty("/selectedRole");
-    if (sRole !== "Admin") {
-      MessageToast.show("You are not authorized to delete employee records.");
-      return;
-    }
-
     const oTable = this.byId("employeeTable") as Table;
     const oModel = oView.getModel("employee") as JSONModel;
     const aEmployees = oModel.getProperty("/employees") as Employee[];
@@ -325,16 +354,9 @@ export default class StrategyView extends Controller {
   }
 
   public onDeleteEmployee(oEvent: Event): void {
+    if (!this._checkAdminAccess("You are not authorized to delete employee records.")) return
+
     const oView = this.getView();
-
-    const sRole = this.getOwnerComponent()
-      .getModel("roleModel")
-      ?.getProperty("/selectedRole");
-    if (sRole !== "Admin") {
-      MessageToast.show("You are not authorized to delete employee records.");
-      return;
-    }
-
     const oButton = oEvent.getSource() as Button;
     const oListItem = oButton.getParent()?.getParent() as ColumnListItem;
     if (!oListItem) {

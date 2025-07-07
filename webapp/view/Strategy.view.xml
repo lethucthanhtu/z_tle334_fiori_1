@@ -35,7 +35,6 @@
                                 tooltip="Export CSV"
                                 icon="sap-icon://excel-attachment"
                                 press="onCSVExport"
-                                visible="{= ${viewModel>/editMode}}"
                             />
                             <Button
                                 id="_IDGenButton3"
@@ -51,7 +50,7 @@
                                 press="onDeleteEmployees"
                                 type="Transparent"
                                 visible="{= ${viewModel>/editMode} }"
-                                enabled="{= ${roleModel>/selectedRole} === 'Admin' }"
+                                enabled="{= ${role>/current_role} === 'admin' }"
                             />
                             <ToggleButton
                                 id="_IDGenToggleButton"
@@ -61,7 +60,7 @@
                             />
                             <SearchField
                                 id="_IDGenSearchField"
-                                placeholder="Filter"
+                                placeholder="Email Filter"
                                 value="{employee>/Employees}"
                                 search="onFitlerSearch"
                                 width="15rem"
@@ -162,7 +161,7 @@
                                         icon="sap-icon://delete"
                                         press="onDeleteEmployee"
                                         type="Transparent"
-                                        enabled="{= ${roleModel>/selectedRole} === 'Admin' }"
+                                        enabled="{= ${role>/current_role} === 'admin' }"
                                     />
                                     <Button
                                         id="_IDGenButton5"
@@ -170,7 +169,7 @@
                                         icon="sap-icon://edit"
                                         press="onModifyEmployee"
                                         type="Transparent"
-                                        enabled="{= ${roleModel>/selectedRole} === 'Admin' }"
+                                        enabled="{= ${role>/current_role} === 'admin' }"
                                     />
                                 </HBox>
                             </cells>

@@ -15,3 +15,8 @@ export type Strategy = {
   strat_name: string;
   // employees: Employee[];
 }
+
+export type Subteam = {
+  key: string;
+  text: string;
+}

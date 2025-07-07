@@ -1,0 +1,14 @@
+{
+  "subteams": [
+    { "key": "Analytics", "text": "Analytics" },
+    { "key": "Development", "text": "Development" },
+    { "key": "Operations", "text": "Operations" },
+    { "key": "HR", "text": "HR" },
+    { "key": "Finance", "text": "Finance" },
+    { "key": "Marketing", "text": "Marketing" },
+    { "key": "Support", "text": "Support" },
+    { "key": "Design", "text": "Design" },
+    { "key": "QA", "text": "QA" },
+    { "key": "Sales", "text": "Sales" }
+  ]
+}

@@ -12,12 +12,6 @@ export default class App extends Controller {
     const oView = this.getView();
     const oDataModel = oView.getModel() as ODataModel;
 
-    // Store role in a model
-    const oRoleModel = new JSONModel({
-      selectedRole: 'Employee'
-    });
-    this.getOwnerComponent().setModel(oRoleModel, "roleModel");
-
     console.log(
       oDataModel.read("/ProductSet", {
         success: function (oData: ProductSet[], response: Object) {

@@ -14,15 +14,14 @@
       <Select
         id="roleSelect"
         width="100%"
+        items="{
+          path: 'role>/roles'
+        }"
       >
         <items>
           <core:Item id="_IDGenItem"
-            key="Admin"
-            text="Admin"
-          />
-          <core:Item id="_IDGenItem1"
-            key="Employee"
-            text="Employee"
+            key="{role>key}"
+            text="{role>text}"
           />
         </items>
       </Select>

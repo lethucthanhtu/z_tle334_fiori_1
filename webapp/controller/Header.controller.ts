@@ -36,12 +36,7 @@ export default class RolePanel extends Controller {
     const sRole = oSelect.getSelectedKey();
     console.log(sRole);
 
-
-    // Store role in a model
-    const oRoleModel = new JSONModel({
-      selectedRole: sRole
-    });
-    this.getOwnerComponent().setModel(oRoleModel, "roleModel");
+    (this.getOwnerComponent().getModel("role") as JSONModel)?.setProperty("/current_role", sRole);
 
     // Show feedback
     MessageToast.show(`Role selected: ${sRole}`);

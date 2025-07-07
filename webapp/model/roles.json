@@ -8,5 +8,7 @@
       "key": "employee",
       "text": "Employee"
     }
-  ]
+  ],
+  "current_role": "employee",
+  "current_eid": "00000001"
 }
