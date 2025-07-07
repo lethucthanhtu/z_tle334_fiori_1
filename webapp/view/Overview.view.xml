@@ -1,5 +1,5 @@
-<mvc:View
-    controllerName="ztle334fiori1.controller.MainView"
+<mvc:View xmlns:tnt="sap.tnt"
+    controllerName="ztle334fiori1.controller.Overview"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
@@ -11,13 +11,18 @@
         <content>
         <Panel id="_IDGenPanel" accessibleRole="Region">
             <Table
-                id="strategyTable"
+                id="strategyTable"  
                 items="{strategy>/strategies}"
                 width="auto" growing="true"
                 growingScrollToLoad="false"
                 noDataText="No Data Text"
                 class="sapUiResponsiveMargin"
             >
+                <headerToolbar>
+                    <OverflowToolbar id="_IDGenOverflowToolbar" >
+                            <Title id="_IDGenTitle" text="Strategies"/>
+                    </OverflowToolbar>
+                </headerToolbar>
                 <columns>
                     <Column id="_IDGenColumn">
                         <Text id="_IDGenText" text="{i18n>StrategyID}" />

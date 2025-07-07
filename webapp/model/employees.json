@@ -49,6 +49,1006 @@
       "manager": "John Smith",
       "subteam": "Finance",
       "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000006",
+      "first_name": "Ian",
+      "last_name": "Brown",
+      "email": "ian.brown@dxc.com",
+      "phone_no": "09148830827",
+      "manager": "David Brown",
+      "subteam": "Development",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000007",
+      "first_name": "Hannah",
+      "last_name": "Jones",
+      "email": "hannah.jones@dxc.com",
+      "phone_no": "09340518170",
+      "manager": "Michael Lee",
+      "subteam": "Marketing",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000008",
+      "first_name": "Oscar",
+      "last_name": "Miller",
+      "email": "oscar.miller@dxc.com",
+      "phone_no": "09461165222",
+      "manager": "Sophia Martinez",
+      "subteam": "Finance",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000009",
+      "first_name": "Julia",
+      "last_name": "Jones",
+      "email": "julia.jones@dxc.com",
+      "phone_no": "09711559630",
+      "manager": "Sophia Martinez",
+      "subteam": "Support",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000010",
+      "first_name": "Charlie",
+      "last_name": "Williams",
+      "email": "charlie.williams@dxc.com",
+      "phone_no": "09557416887",
+      "manager": "Emily Clark",
+      "subteam": "Support",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000011",
+      "first_name": "Oscar",
+      "last_name": "Brown",
+      "email": "oscar.brown@dxc.com",
+      "phone_no": "09526924569",
+      "manager": "Michael Lee",
+      "subteam": "Development",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000012",
+      "first_name": "Tina",
+      "last_name": "Garcia",
+      "email": "tina.garcia@dxc.com",
+      "phone_no": "09409159140",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "HR",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000013",
+      "first_name": "Diana",
+      "last_name": "Johnson",
+      "email": "diana.johnson@dxc.com",
+      "phone_no": "09429748980",
+      "manager": "John Smith",
+      "subteam": "Design",
+      "strat_id": "BO004"
+    },
+    {
+      "emp_ID": "00000014",
+      "first_name": "Kevin",
+      "last_name": "Brown",
+      "email": "kevin.brown@dxc.com",
+      "phone_no": "09122212885",
+      "manager": "Emily Clark",
+      "subteam": "Finance",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000015",
+      "first_name": "Hannah",
+      "last_name": "Garcia",
+      "email": "hannah.garcia@dxc.com",
+      "phone_no": "09093974990",
+      "manager": "David Brown",
+      "subteam": "HR",
+      "strat_id": "BO004"
+    },
+    {
+      "emp_ID": "00000016",
+      "first_name": "Alice",
+      "last_name": "Williams",
+      "email": "alice.williams@dxc.com",
+      "phone_no": "09643581761",
+      "manager": "John Smith",
+      "subteam": "QA",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000017",
+      "first_name": "George",
+      "last_name": "Williams",
+      "email": "george.williams@dxc.com",
+      "phone_no": "09388792752",
+      "manager": "John Smith",
+      "subteam": "Marketing",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000018",
+      "first_name": "Paula",
+      "last_name": "Smith",
+      "email": "paula.smith@dxc.com",
+      "phone_no": "09937064973",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "Design",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000019",
+      "first_name": "Nina",
+      "last_name": "Davis",
+      "email": "nina.davis@dxc.com",
+      "phone_no": "09813025090",
+      "manager": "John Smith",
+      "subteam": "Finance",
+      "strat_id": "BO004"
+    },
+    {
+      "emp_ID": "00000020",
+      "first_name": "George",
+      "last_name": "Johnson",
+      "email": "george.johnson@dxc.com",
+      "phone_no": "09232817708",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "Marketing",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000021",
+      "first_name": "Rita",
+      "last_name": "Brown",
+      "email": "rita.brown@dxc.com",
+      "phone_no": "09119447980",
+      "manager": "David Brown",
+      "subteam": "Support",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000022",
+      "first_name": "Quinn",
+      "last_name": "Martinez",
+      "email": "quinn.martinez@dxc.com",
+      "phone_no": "09167388617",
+      "manager": "Sophia Martinez",
+      "subteam": "Marketing",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000023",
+      "first_name": "Charlie",
+      "last_name": "Brown",
+      "email": "charlie.brown@dxc.com",
+      "phone_no": "09138169554",
+      "manager": "Michael Lee",
+      "subteam": "Development",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000024",
+      "first_name": "Mason",
+      "last_name": "Jones",
+      "email": "mason.jones@dxc.com",
+      "phone_no": "09717183425",
+      "manager": "David Brown",
+      "subteam": "Design",
+      "strat_id": "BO004"
+    },
+    {
+      "emp_ID": "00000025",
+      "first_name": "Sam",
+      "last_name": "Johnson",
+      "email": "sam.johnson@dxc.com",
+      "phone_no": "09585728924",
+      "manager": "Emily Clark",
+      "subteam": "Support",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000026",
+      "first_name": "Julia",
+      "last_name": "Johnson",
+      "email": "julia.johnson@dxc.com",
+      "phone_no": "09894900279",
+      "manager": "Michael Lee",
+      "subteam": "Support",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000027",
+      "first_name": "Ethan",
+      "last_name": "Miller",
+      "email": "ethan.miller@dxc.com",
+      "phone_no": "09590828408",
+      "manager": "Michael Lee",
+      "subteam": "Design",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000028",
+      "first_name": "Hannah",
+      "last_name": "Williams",
+      "email": "hannah.williams@dxc.com",
+      "phone_no": "09260476221",
+      "manager": "Michael Lee",
+      "subteam": "Analytics",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000029",
+      "first_name": "Alice",
+      "last_name": "Johnson",
+      "email": "alice.johnson@dxc.com",
+      "phone_no": "09658937365",
+      "manager": "Emily Clark",
+      "subteam": "Design",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000030",
+      "first_name": "Paula",
+      "last_name": "Williams",
+      "email": "paula.williams@dxc.com",
+      "phone_no": "09623809362",
+      "manager": "Sophia Martinez",
+      "subteam": "Sales",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000031",
+      "first_name": "Sam",
+      "last_name": "Rodriguez",
+      "email": "sam.rodriguez@dxc.com",
+      "phone_no": "09820246171",
+      "manager": "Sophia Martinez",
+      "subteam": "Finance",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000032",
+      "first_name": "Charlie",
+      "last_name": "Miller",
+      "email": "charlie.miller@dxc.com",
+      "phone_no": "09490124396",
+      "manager": "David Brown",
+      "subteam": "Marketing",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000033",
+      "first_name": "Fiona",
+      "last_name": "Williams",
+      "email": "fiona.williams@dxc.com",
+      "phone_no": "09470341325",
+      "manager": "David Brown",
+      "subteam": "Support",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000034",
+      "first_name": "Mason",
+      "last_name": "Johnson",
+      "email": "mason.johnson@dxc.com",
+      "phone_no": "09738339694",
+      "manager": "David Brown",
+      "subteam": "Marketing",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000035",
+      "first_name": "Kevin",
+      "last_name": "Garcia",
+      "email": "kevin.garcia@dxc.com",
+      "phone_no": "09779712773",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "Design",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000036",
+      "first_name": "Rita",
+      "last_name": "Rodriguez",
+      "email": "rita.rodriguez@dxc.com",
+      "phone_no": "09317172537",
+      "manager": "Sophia Martinez",
+      "subteam": "QA",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000037",
+      "first_name": "Tina",
+      "last_name": "Martinez",
+      "email": "tina.martinez@dxc.com",
+      "phone_no": "09989712338",
+      "manager": "John Smith",
+      "subteam": "Support",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000038",
+      "first_name": "Paula",
+      "last_name": "Johnson",
+      "email": "paula.johnson@dxc.com",
+      "phone_no": "09369003183",
+      "manager": "Sophia Martinez",
+      "subteam": "Analytics",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000039",
+      "first_name": "Diana",
+      "last_name": "Williams",
+      "email": "diana.williams@dxc.com",
+      "phone_no": "09214508314",
+      "manager": "Sophia Martinez",
+      "subteam": "Sales",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000040",
+      "first_name": "Ethan",
+      "last_name": "Martinez",
+      "email": "ethan.martinez@dxc.com",
+      "phone_no": "09157004654",
+      "manager": "Sophia Martinez",
+      "subteam": "QA",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000041",
+      "first_name": "Charlie",
+      "last_name": "Martinez",
+      "email": "charlie.martinez@dxc.com",
+      "phone_no": "09456289851",
+      "manager": "David Brown",
+      "subteam": "QA",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000042",
+      "first_name": "Sam",
+      "last_name": "Brown",
+      "email": "sam.brown@dxc.com",
+      "phone_no": "09928251617",
+      "manager": "Sophia Martinez",
+      "subteam": "Development",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000043",
+      "first_name": "Tina",
+      "last_name": "Miller",
+      "email": "tina.miller@dxc.com",
+      "phone_no": "09726398129",
+      "manager": "John Smith",
+      "subteam": "Analytics",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000044",
+      "first_name": "Nina",
+      "last_name": "Johnson",
+      "email": "nina.johnson@dxc.com",
+      "phone_no": "09608207917",
+      "manager": "Sophia Martinez",
+      "subteam": "QA",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000045",
+      "first_name": "Paula",
+      "last_name": "Miller",
+      "email": "paula.miller@dxc.com",
+      "phone_no": "09557904482",
+      "manager": "Emily Clark",
+      "subteam": "Sales",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000046",
+      "first_name": "George",
+      "last_name": "Jones",
+      "email": "george.jones@dxc.com",
+      "phone_no": "09994962467",
+      "manager": "David Brown",
+      "subteam": "Operations",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000047",
+      "first_name": "Fiona",
+      "last_name": "Garcia",
+      "email": "fiona.garcia@dxc.com",
+      "phone_no": "09552631287",
+      "manager": "Sophia Martinez",
+      "subteam": "Finance",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000048",
+      "first_name": "Oscar",
+      "last_name": "Smith",
+      "email": "oscar.smith@dxc.com",
+      "phone_no": "09595221805",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "Analytics",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000049",
+      "first_name": "George",
+      "last_name": "Martinez",
+      "email": "george.martinez@dxc.com",
+      "phone_no": "09046978025",
+      "manager": "Emily Clark",
+      "subteam": "QA",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000050",
+      "first_name": "Kevin",
+      "last_name": "Miller",
+      "email": "kevin.miller@dxc.com",
+      "phone_no": "09200391871",
+      "manager": "John Smith",
+      "subteam": "Design",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000051",
+      "first_name": "Bob",
+      "last_name": "Rodriguez",
+      "email": "bob.rodriguez@dxc.com",
+      "phone_no": "09097870490",
+      "manager": "John Smith",
+      "subteam": "HR",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000052",
+      "first_name": "Tina",
+      "last_name": "Johnson",
+      "email": "tina.johnson@dxc.com",
+      "phone_no": "09371479580",
+      "manager": "David Brown",
+      "subteam": "HR",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000053",
+      "first_name": "George",
+      "last_name": "Martinez",
+      "email": "george.martinez1@dxc.com",
+      "phone_no": "09313682787",
+      "manager": "John Smith",
+      "subteam": "Development",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000054",
+      "first_name": "Oscar",
+      "last_name": "Rodriguez",
+      "email": "oscar.rodriguez@dxc.com",
+      "phone_no": "09321569859",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "HR",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000055",
+      "first_name": "Oscar",
+      "last_name": "Smith",
+      "email": "oscar.smith1@dxc.com",
+      "phone_no": "09846760942",
+      "manager": "Sophia Martinez",
+      "subteam": "Analytics",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000056",
+      "first_name": "Oscar",
+      "last_name": "Smith",
+      "email": "oscar.smith2@dxc.com",
+      "phone_no": "09552931808",
+      "manager": "Emily Clark",
+      "subteam": "Development",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000057",
+      "first_name": "Ian",
+      "last_name": "Garcia",
+      "email": "ian.garcia@dxc.com",
+      "phone_no": "09949326902",
+      "manager": "John Smith",
+      "subteam": "Marketing",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000058",
+      "first_name": "Diana",
+      "last_name": "Brown",
+      "email": "diana.brown@dxc.com",
+      "phone_no": "09204832578",
+      "manager": "John Smith",
+      "subteam": "Sales",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000059",
+      "first_name": "Paula",
+      "last_name": "Williams",
+      "email": "paula.williams1@dxc.com",
+      "phone_no": "09885649533",
+      "manager": "Michael Lee",
+      "subteam": "Design",
+      "strat_id": "BO004"
+    },
+    {
+      "emp_ID": "00000060",
+      "first_name": "Nina",
+      "last_name": "Miller",
+      "email": "nina.miller@dxc.com",
+      "phone_no": "09732207780",
+      "manager": "David Brown",
+      "subteam": "Analytics",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000061",
+      "first_name": "George",
+      "last_name": "Rodriguez",
+      "email": "george.rodriguez@dxc.com",
+      "phone_no": "09652515688",
+      "manager": "Sophia Martinez",
+      "subteam": "QA",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000062",
+      "first_name": "Quinn",
+      "last_name": "Brown",
+      "email": "quinn.brown@dxc.com",
+      "phone_no": "09995777071",
+      "manager": "David Brown",
+      "subteam": "Development",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000063",
+      "first_name": "Rita",
+      "last_name": "Martinez",
+      "email": "rita.martinez@dxc.com",
+      "phone_no": "09684916320",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "HR",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000064",
+      "first_name": "Paula",
+      "last_name": "Johnson",
+      "email": "paula.johnson1@dxc.com",
+      "phone_no": "09029215608",
+      "manager": "Michael Lee",
+      "subteam": "Operations",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000065",
+      "first_name": "Diana",
+      "last_name": "Miller",
+      "email": "diana.miller@dxc.com",
+      "phone_no": "09400878598",
+      "manager": "David Brown",
+      "subteam": "Analytics",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000066",
+      "first_name": "Mason",
+      "last_name": "Johnson",
+      "email": "mason.johnson1@dxc.com",
+      "phone_no": "09770630794",
+      "manager": "David Brown",
+      "subteam": "Finance",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000067",
+      "first_name": "Charlie",
+      "last_name": "Miller",
+      "email": "charlie.miller1@dxc.com",
+      "phone_no": "09696880322",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "Development",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000068",
+      "first_name": "George",
+      "last_name": "Johnson",
+      "email": "george.johnson1@dxc.com",
+      "phone_no": "09539994861",
+      "manager": "Michael Lee",
+      "subteam": "Finance",
+      "strat_id": "BO004"
+    },
+    {
+      "emp_ID": "00000069",
+      "first_name": "Ian",
+      "last_name": "Garcia",
+      "email": "ian.garcia1@dxc.com",
+      "phone_no": "09103844822",
+      "manager": "John Smith",
+      "subteam": "Support",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000070",
+      "first_name": "Charlie",
+      "last_name": "Brown",
+      "email": "charlie.brown1@dxc.com",
+      "phone_no": "09182463089",
+      "manager": "John Smith",
+      "subteam": "QA",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000071",
+      "first_name": "Quinn",
+      "last_name": "Miller",
+      "email": "quinn.miller@dxc.com",
+      "phone_no": "09946331348",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "Marketing",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000072",
+      "first_name": "Sam",
+      "last_name": "Smith",
+      "email": "sam.smith@dxc.com",
+      "phone_no": "09526715867",
+      "manager": "John Smith",
+      "subteam": "Support",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000073",
+      "first_name": "Bob",
+      "last_name": "Miller",
+      "email": "bob.miller@dxc.com",
+      "phone_no": "09502614224",
+      "manager": "John Smith",
+      "subteam": "Finance",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000074",
+      "first_name": "Julia",
+      "last_name": "Brown",
+      "email": "julia.brown@dxc.com",
+      "phone_no": "09336266756",
+      "manager": "John Smith",
+      "subteam": "Design",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000075",
+      "first_name": "Oscar",
+      "last_name": "Johnson",
+      "email": "oscar.johnson@dxc.com",
+      "phone_no": "09237305050",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "Design",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000076",
+      "first_name": "Nina",
+      "last_name": "Davis",
+      "email": "nina.davis1@dxc.com",
+      "phone_no": "09376562258",
+      "manager": "Michael Lee",
+      "subteam": "Design",
+      "strat_id": "BO004"
+    },
+    {
+      "emp_ID": "00000077",
+      "first_name": "Bob",
+      "last_name": "Williams",
+      "email": "bob.williams@dxc.com",
+      "phone_no": "09401879231",
+      "manager": "Sophia Martinez",
+      "subteam": "Development",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000078",
+      "first_name": "Alice",
+      "last_name": "Jones",
+      "email": "alice.jones@dxc.com",
+      "phone_no": "09282037811",
+      "manager": "David Brown",
+      "subteam": "Marketing",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000079",
+      "first_name": "Alice",
+      "last_name": "Martinez",
+      "email": "alice.martinez@dxc.com",
+      "phone_no": "09949332355",
+      "manager": "Michael Lee",
+      "subteam": "Operations",
+      "strat_id": "BO004"
+    },
+    {
+      "emp_ID": "00000080",
+      "first_name": "Luna",
+      "last_name": "Smith",
+      "email": "luna.smith@dxc.com",
+      "phone_no": "09109011981",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "Analytics",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000081",
+      "first_name": "Mason",
+      "last_name": "Jones",
+      "email": "mason.jones1@dxc.com",
+      "phone_no": "09008705190",
+      "manager": "Emily Clark",
+      "subteam": "QA",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000082",
+      "first_name": "Alice",
+      "last_name": "Johnson",
+      "email": "alice.johnson1@dxc.com",
+      "phone_no": "09452412692",
+      "manager": "John Smith",
+      "subteam": "Support",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000083",
+      "first_name": "Paula",
+      "last_name": "Johnson",
+      "email": "paula.johnson2@dxc.com",
+      "phone_no": "09490945492",
+      "manager": "Emily Clark",
+      "subteam": "Design",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000084",
+      "first_name": "Hannah",
+      "last_name": "Rodriguez",
+      "email": "hannah.rodriguez@dxc.com",
+      "phone_no": "09761578267",
+      "manager": "David Brown",
+      "subteam": "Development",
+      "strat_id": "BO004"
+    },
+    {
+      "emp_ID": "00000085",
+      "first_name": "Bob",
+      "last_name": "Smith",
+      "email": "bob.smith@dxc.com",
+      "phone_no": "09264863335",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "QA",
+      "strat_id": "BO004"
+    },
+    {
+      "emp_ID": "00000086",
+      "first_name": "George",
+      "last_name": "Smith",
+      "email": "george.smith@dxc.com",
+      "phone_no": "09921104569",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "Finance",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000087",
+      "first_name": "Charlie",
+      "last_name": "Miller",
+      "email": "charlie.miller2@dxc.com",
+      "phone_no": "09620353941",
+      "manager": "Sophia Martinez",
+      "subteam": "Design",
+      "strat_id": "BO004"
+    },
+    {
+      "emp_ID": "00000088",
+      "first_name": "Oscar",
+      "last_name": "Davis",
+      "email": "oscar.davis@dxc.com",
+      "phone_no": "09732265153",
+      "manager": "Michael Lee",
+      "subteam": "Support",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000089",
+      "first_name": "Charlie",
+      "last_name": "Smith",
+      "email": "charlie.smith@dxc.com",
+      "phone_no": "09356157940",
+      "manager": "John Smith",
+      "subteam": "Marketing",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000090",
+      "first_name": "Mason",
+      "last_name": "Brown",
+      "email": "mason.brown@dxc.com",
+      "phone_no": "09997383231",
+      "manager": "Sophia Martinez",
+      "subteam": "Analytics",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000091",
+      "first_name": "Kevin",
+      "last_name": "Brown",
+      "email": "kevin.brown1@dxc.com",
+      "phone_no": "09652083392",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "Marketing",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000092",
+      "first_name": "Charlie",
+      "last_name": "Williams",
+      "email": "charlie.williams1@dxc.com",
+      "phone_no": "09285500056",
+      "manager": "Michael Lee",
+      "subteam": "Sales",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000093",
+      "first_name": "Mason",
+      "last_name": "Williams",
+      "email": "mason.williams@dxc.com",
+      "phone_no": "09668072478",
+      "manager": "Michael Lee",
+      "subteam": "Finance",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000094",
+      "first_name": "Charlie",
+      "last_name": "Brown",
+      "email": "charlie.brown2@dxc.com",
+      "phone_no": "09568943740",
+      "manager": "Sophia Martinez",
+      "subteam": "Marketing",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000095",
+      "first_name": "Alice",
+      "last_name": "Jones",
+      "email": "alice.jones1@dxc.com",
+      "phone_no": "09708779406",
+      "manager": "Emily Clark",
+      "subteam": "Operations",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000096",
+      "first_name": "Ethan",
+      "last_name": "Garcia",
+      "email": "ethan.garcia@dxc.com",
+      "phone_no": "09752795950",
+      "manager": "Emily Clark",
+      "subteam": "QA",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000097",
+      "first_name": "Luna",
+      "last_name": "Martinez",
+      "email": "luna.martinez@dxc.com",
+      "phone_no": "09916917586",
+      "manager": "Sophia Martinez",
+      "subteam": "Finance",
+      "strat_id": "CD005"
+    },
+    {
+      "emp_ID": "00000098",
+      "first_name": "Quinn",
+      "last_name": "Smith",
+      "email": "quinn.smith@dxc.com",
+      "phone_no": "09551120721",
+      "manager": "Nguyen Thi Hong Hue",
+      "subteam": "Operations",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000099",
+      "first_name": "Quinn",
+      "last_name": "Davis",
+      "email": "quinn.davis@dxc.com",
+      "phone_no": "09456204923",
+      "manager": "David Brown",
+      "subteam": "Finance",
+      "strat_id": "SG001"
+    },
+    {
+      "emp_ID": "00000100",
+      "first_name": "Rita",
+      "last_name": "Martinez",
+      "email": "rita.martinez1@dxc.com",
+      "phone_no": "09992006353",
+      "manager": "John Smith",
+      "subteam": "Finance",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000101",
+      "first_name": "Fiona",
+      "last_name": "Jones",
+      "email": "fiona.jones@dxc.com",
+      "phone_no": "09284497065",
+      "manager": "David Brown",
+      "subteam": "Development",
+      "strat_id": "BO004"
+    },
+    {
+      "emp_ID": "00000102",
+      "first_name": "Diana",
+      "last_name": "Martinez",
+      "email": "diana.martinez@dxc.com",
+      "phone_no": "09839106535",
+      "manager": "David Brown",
+      "subteam": "Finance",
+      "strat_id": "PE002"
+    },
+    {
+      "emp_ID": "00000103",
+      "first_name": "Bob",
+      "last_name": "Smith",
+      "email": "bob.smith1@dxc.com",
+      "phone_no": "09902447497",
+      "manager": "Michael Lee",
+      "subteam": "Analytics",
+      "strat_id": "DE006"
+    },
+    {
+      "emp_ID": "00000104",
+      "first_name": "Alice",
+      "last_name": "Smith",
+      "email": "alice.smith@dxc.com",
+      "phone_no": "09152954401",
+      "manager": "Emily Clark",
+      "subteam": "Development",
+      "strat_id": "IN003"
+    },
+    {
+      "emp_ID": "00000105",
+      "first_name": "Julia",
+      "last_name": "Miller",
+      "email": "julia.miller@dxc.com",
+      "phone_no": "09182184920",
+      "manager": "John Smith",
+      "subteam": "Design",
+      "strat_id": "DE006"
     }
   ]
 }

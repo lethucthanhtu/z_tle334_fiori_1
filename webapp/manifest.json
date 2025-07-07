@@ -127,8 +127,8 @@
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "MainView",
-          "viewName": "MainView"
+          "viewId": "Overview",
+          "viewName": "Overview"
         },
         "strategy": {
           "viewType": "XML",

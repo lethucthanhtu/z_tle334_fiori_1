@@ -12,146 +12,172 @@
             title="Strategy"
         />
         <Panel id="_IDGenPanel1">
-            <Toolbar id="_IDGenToolbar1">
-                <ToolbarSpacer id="_IDGenToolbarSpacer" />
-                <Button
-                    id="_IDGenButton9"
-                    icon="sap-icon://excel-attachment"
-                    press="onCSVExport"
-                    visible="{= ${viewModel>/editMode}}"
-                />
-                <Button
-                    id="_IDGenButton3"
-                    icon="sap-icon://create"
-                    press="onCreateEmployee"
-                    visible="{= ${viewModel>/editMode}}"
-                />
-                <Button
-                    id="_IDGenButton4"
-                    icon="sap-icon://delete"
-                    press="onDeleteEmployees"
-                    type="Transparent"
-                    visible="{= ${viewModel>/editMode} }"
-                    enabled="{= ${roleModel>/selectedRole} === 'Admin' }"
-                />
-                <ToggleButton
-                    id="_IDGenToggleButton"
-                    icon="{viewModel>/editIcon}"
-                    press="onEditToggle"
-                />
-            </Toolbar>
-            <Table
-                id="employeeTable"
-                items="{employee>/employees}"
-                mode="{= ${viewModel>/editMode} ? 'MultiSelect' : 'None' }"
+            <VBox
+                id="_IDGenVBox"
+                fitContainer="true"
+                height="100%"
+                width="100%"
             >
-                <columns>
-                    <Column id="_IDGenColumn2">
-                        <Text
-                            id="_IDGenText20"
-                            text="Employee ID"
-                        />
-                    </Column>
-                    <Column id="_IDGenColumn10">
-                        <Text
-                            id="_IDGenText21"
-                            text="First Name"
-                        />
-                    </Column>
-                    <Column id="_IDGenColumn11">
-                        <Text
-                            id="_IDGenText22"
-                            text="Last Name"
-                        />
-                    </Column>
-                    <Column id="_IDGenColumn12">
-                        <Text
-                            id="_IDGenText23"
-                            text="Email"
-                        />
-                    </Column>
-                    <Column id="_IDGenColumn13">
-                        <Text
-                            id="_IDGenText24"
-                            text="Phone"
-                        />
-                    </Column>
-                    <Column id="_IDGenColumn14">
-                        <Text
-                            id="_IDGenText25"
-                            text="Manager"
-                        />
-                    </Column>
-                    <Column id="_IDGenColumn15">
-                        <Text
-                            id="_IDGenText26"
-                            text="Subteam"
-                        />
-                    </Column>
-                    <Column
-                        id="_IDGenColumn3"
-                        visible="{= ${viewModel>/editMode} }"
-                    >
-                        <Text
-                            id="_IDGenText4"
-                            text="Actions"
-                        />
-                    </Column>
-                </columns>
-                <items>
-                    <ColumnListItem id="_IDGenColumnListItem2">
-                        <cells>
-                            <Text
-                                id="_IDGenText27"
-                                text="{employee>emp_ID}"
+                <Table
+                    id="employeeTable"
+                    items="{employee>/employees}"
+                    mode="{= ${viewModel>/editMode} ? 'MultiSelect' : 'None' }"
+                >
+                    <headerToolbar>
+                        <OverflowToolbar id="_IDGenOverflowToolbar2">
+                            <Title
+                                id="_IDGenTitle1"
+                                text="Employees"
                             />
-                            <Text
-                                id="_IDGenText28"
-                                text="{employee>first_name}"
+                            <ToolbarSpacer id="_IDGenToolbarSpacer" />
+                            <Button
+                                id="_IDGenButton9"
+                                tooltip="Export CSV"
+                                icon="sap-icon://excel-attachment"
+                                press="onCSVExport"
+                                visible="{= ${viewModel>/editMode}}"
                             />
-                            <Text
-                                id="_IDGenText29"
-                                text="{employee>last_name}"
+                            <Button
+                                id="_IDGenButton3"
+                                tooltip="Add new Employee"
+                                icon="sap-icon://create"
+                                press="onCreateEmployee"
+                                visible="{= ${viewModel>/editMode}}"
                             />
-                            <Text
-                                id="_IDGenText30"
-                                text="{employee>email}"
+                            <Button
+                                id="_IDGenButton4"
+                                tooltip="Remove Employee(s)"
+                                icon="sap-icon://delete"
+                                press="onDeleteEmployees"
+                                type="Transparent"
+                                visible="{= ${viewModel>/editMode} }"
+                                enabled="{= ${roleModel>/selectedRole} === 'Admin' }"
                             />
-                            <Text
-                                id="_IDGenText31"
-                                text="{employee>phone_no}"
+                            <ToggleButton
+                                id="_IDGenToggleButton"
+                                tooltip="Edit - Display mode"
+                                icon="{viewModel>/editIcon}"
+                                press="onEditToggle"
                             />
-                            <Text
-                                id="_IDGenText32"
-                                text="{employee>manager}"
+                            <SearchField
+                                id="_IDGenSearchField"
+                                placeholder="Filter"
+                                value="{employee>/Employees}"
+                                search="onFitlerSearch"
+                                width="15rem"
                             />
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column id="_IDGenColumn2">
                             <Text
-                                id="_IDGenText33"
-                                text="{employee>subteam}"
+                                id="_IDGenText20"
+                                text="Employee ID"
                             />
-                            <HBox
-                                id="_IDGenHBox"
-                                visible="{viewModel>/editMode}"
-                            >
-                                <Button
-                                    id="_IDGenButton6"
-                                    icon="sap-icon://delete"
-                                    press="onDeleteEmployee"
-                                    type="Transparent"
-                                    enabled="{= ${roleModel>/selectedRole} === 'Admin' }"
+                        </Column>
+                        <Column id="_IDGenColumn10">
+                            <Text
+                                id="_IDGenText21"
+                                text="First Name"
+                            />
+                        </Column>
+                        <Column id="_IDGenColumn11">
+                            <Text
+                                id="_IDGenText22"
+                                text="Last Name"
+                            />
+                        </Column>
+                        <Column id="_IDGenColumn12">
+                            <Text
+                                id="_IDGenText23"
+                                text="Email"
+                            />
+                        </Column>
+                        <Column id="_IDGenColumn13">
+                            <Text
+                                id="_IDGenText24"
+                                text="Phone"
+                            />
+                        </Column>
+                        <Column id="_IDGenColumn14">
+                            <Text
+                                id="_IDGenText25"
+                                text="Manager"
+                            />
+                        </Column>
+                        <Column id="_IDGenColumn15">
+                            <Text
+                                id="_IDGenText26"
+                                text="Subteam"
+                            />
+                        </Column>
+                        <Column
+                            id="_IDGenColumn3"
+                            visible="{= ${viewModel>/editMode} }"
+                        >
+                            <Text
+                                id="_IDGenText4"
+                                text="Actions"
+                            />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem id="_IDGenColumnListItem2">
+                            <cells>
+                                <Text
+                                    id="_IDGenText27"
+                                    text="{employee>emp_ID}"
                                 />
-                                <Button
-                                    id="_IDGenButton5"
-                                    icon="sap-icon://edit"
-                                    press="onModifyEmployee"
-                                    type="Transparent"
-                                    enabled="{= ${roleModel>/selectedRole} === 'Admin' }"
+                                <Text
+                                    id="_IDGenText28"
+                                    text="{employee>first_name}"
                                 />
-                            </HBox>
-                        </cells>
-                    </ColumnListItem>
-                </items>
-            </Table>
+                                <Text
+                                    id="_IDGenText29"
+                                    text="{employee>last_name}"
+                                />
+                                <Text
+                                    id="_IDGenText30"
+                                    text="{employee>email}"
+                                />
+                                <Text
+                                    id="_IDGenText31"
+                                    text="{employee>phone_no}"
+                                />
+                                <Text
+                                    id="_IDGenText32"
+                                    text="{employee>manager}"
+                                />
+                                <Text
+                                    id="_IDGenText33"
+                                    text="{employee>subteam}"
+                                />
+                                <HBox
+                                    id="_IDGenHBox"
+                                    visible="{viewModel>/editMode}"
+                                >
+                                    <Button
+                                        id="_IDGenButton6"
+                                        tooltip="Delete Employee"
+                                        icon="sap-icon://delete"
+                                        press="onDeleteEmployee"
+                                        type="Transparent"
+                                        enabled="{= ${roleModel>/selectedRole} === 'Admin' }"
+                                    />
+                                    <Button
+                                        id="_IDGenButton5"
+                                        tooltip="Edit Employee"
+                                        icon="sap-icon://edit"
+                                        press="onModifyEmployee"
+                                        type="Transparent"
+                                        enabled="{= ${roleModel>/selectedRole} === 'Admin' }"
+                                    />
+                                </HBox>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
         </Panel>
     </Page>
 </mvc:View>
