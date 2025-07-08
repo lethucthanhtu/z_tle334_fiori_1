@@ -11,7 +11,7 @@ import {
 	type Employee,
 	type Subteam,
 	type Strategy,
-} from 'ztle334fiori1/generated/local.types';
+} from '../model/local.types';
 import JSONModel from 'sap/ui/model/json/JSONModel';
 import Button from 'sap/m/Button';
 import Dialog from 'sap/m/Dialog';
