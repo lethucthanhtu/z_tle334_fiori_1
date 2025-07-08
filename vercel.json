@@ -3,13 +3,11 @@
 	"routes": [
 		{
 			"src": "/(.*\\.js)",
-			"headers": {
-				"Content-Type": "application/javascript"
-			}
+			"headers": { "Content-Type": "application/javascript" },
+			"dest": "/$1"
 		},
-		{
-			"src": "/(.*)",
-			"dest": "/index.html"
-		}
+		{ "src": "/(.*\\.json)", "dest": "/$1" },
+		{ "src": "/(.*\\.xml)", "dest": "/$1" },
+		{ "src": "/(.*)", "dest": "/index.html" }
 	]
 }
