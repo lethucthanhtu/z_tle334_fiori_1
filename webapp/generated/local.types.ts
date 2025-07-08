@@ -20,3 +20,8 @@ export type Subteam = {
   key: string;
   text: string;
 }
+
+export type Role = {
+  key: string;
+  text: string;
+}
