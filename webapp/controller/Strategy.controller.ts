@@ -21,6 +21,7 @@ import Context from 'sap/ui/model/Context';
 import BindingMode from 'sap/ui/model/BindingMode';
 import MessageBox, { Action } from 'sap/m/MessageBox';
 import Select from 'sap/m/Select';
+import History from 'sap/ui/core/History';
 
 /**
  * @namespace ztle334fiori1.controller
@@ -58,6 +59,11 @@ export default class StrategyView extends Controller {
 			(this.byId('_IDGenObjectHeader') as ObjectHeader).setTitle(
 				oStrategy.strat_name
 			);
+	}
+
+	public onNavigate(): void {
+		// Go back in browser history
+		window.history.go(-1);
 	}
 
 	private _filter(filter: Filter[]): void {
