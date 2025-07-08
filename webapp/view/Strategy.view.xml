@@ -6,6 +6,7 @@
     <Page
         id="_IDGenPage2"
         title="{i18n>StrategyPageTitle}"
+        showNavButton="true"
     >
         <ObjectHeader
             id="_IDGenObjectHeader"
