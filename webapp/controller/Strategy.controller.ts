@@ -176,7 +176,7 @@ export default class StrategyView extends Controller {
 			sPath = sPath || oContext.getPath();
 			oEmployee = {
 				...oModel.getProperty(sPath),
-				subteam: sSubteam,
+				// subteam: sSubteam,
 			}; // exact data for editing
 		}
 
@@ -249,13 +249,17 @@ export default class StrategyView extends Controller {
 			errors.push('Last name is required, letters only, max 50 characters.');
 
 		// Email
-		if (!oEmployee.email || !oEmployee.email.endsWith('@dxc.com'))
+		if (!oEmployee.email || !oEmployee.email.endsWith('@dxc.com')) {
 			errors.push('Email is required and must end with @dxc.com.');
-		else if (
-			isCreate &&
-			existingEmployees.some((e) => e.email === oEmployee.email)
-		)
-			errors.push('Email already exists.');
+		} else {
+			const isDuplicateEmail = existingEmployees.some(
+				(e) => e.email === oEmployee.email && e.emp_ID !== oEmployee.emp_ID
+			);
+
+			if (isDuplicateEmail) {
+				errors.push('Email already exists for another employee.');
+			}
+		}
 
 		// Phone No
 		if (!oEmployee.phone_no || !/^09\d{9}$/.test(oEmployee.phone_no))
@@ -362,20 +366,36 @@ export default class StrategyView extends Controller {
 			return;
 		}
 
-		// Get indexes of selected employees
-		const aIndexesToDelete = aSelectedContexts
-			.map((ctx) => parseInt(ctx.getPath().split('/').pop() || '-1', 10))
-			.filter((idx) => idx > -1);
+		MessageBox.confirm('Are you sure to delete?', {
+			actions: [Action.OK, Action.CANCEL],
+			onClose: (sAction: Action) => {
+				switch (sAction) {
+					case Action.OK:
+						// Get indexes of selected employees
+						const aIndexesToDelete = aSelectedContexts
+							.map((ctx) =>
+								parseInt(ctx.getPath().split('/').pop() || '-1', 10)
+							)
+							.filter((idx) => idx > -1);
 
-		// Remove from highest to lowest index to avoid shifting
-		aIndexesToDelete
-			.sort((a, b) => b - a)
-			.forEach((idx) => aEmployees.splice(idx, 1));
+						// Remove from highest to lowest index to avoid shifting
+						aIndexesToDelete
+							.sort((a, b) => b - a)
+							.forEach((idx) => aEmployees.splice(idx, 1));
 
-		oModel.setProperty(PROPS.Employees, aEmployees);
-		oModel.refresh(true);
-		oTable.removeSelections(true);
-		MessageToast.show('Selected employees deleted.');
+						oModel.setProperty(PROPS.Employees, aEmployees);
+						oModel.refresh(true);
+						oTable.removeSelections(true);
+						MessageToast.show('Selected employees deleted.');
+						break;
+					case Action.CANCEL:
+						MessageToast.show('Cancel delete employee(s).');
+						break;
+					default:
+						break;
+				}
+			},
+		});
 	}
 
 	public onDeleteEmployee(oEvent: Event): void {
@@ -408,12 +428,27 @@ export default class StrategyView extends Controller {
 		const sIndex = sPath.split('/').pop();
 		const iIndex = sIndex ? parseInt(sIndex, 10) : -1;
 
-		if (iIndex > -1 && iIndex < aEmployees.length) {
-			aEmployees.splice(iIndex, 1);
-			oModel.setProperty(PROPS.Employees, aEmployees);
-			oModel.refresh(true);
-			MessageToast.show('Employee deleted (in-memory)');
-		} else MessageToast.show('Failed to delete employee. Invalid index.');
+		MessageBox.confirm('Are you sure to delete?', {
+			actions: [Action.OK, Action.CANCEL],
+			onClose: (sAction: Action) => {
+				switch (sAction) {
+					case Action.OK:
+						if (iIndex > -1 && iIndex < aEmployees.length) {
+							aEmployees.splice(iIndex, 1);
+							oModel.setProperty(PROPS.Employees, aEmployees);
+							oModel.refresh(true);
+							MessageToast.show('Employee deleted (in-memory)');
+						} else
+							MessageToast.show('Failed to delete employee. Invalid index.');
+						break;
+					case Action.CANCEL:
+						MessageToast.show('Cancel delete employee(s).');
+						break;
+					default:
+						break;
+				}
+			},
+		});
 	}
 
 	public onEditToggle(oEvent: Event): void {
