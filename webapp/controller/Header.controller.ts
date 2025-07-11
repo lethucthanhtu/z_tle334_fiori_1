@@ -4,6 +4,10 @@ import Select from 'sap/m/Select';
 import Fragment from 'sap/ui/core/Fragment';
 import Controller from 'sap/ui/core/mvc/Controller';
 import JSONModel from 'sap/ui/model/json/JSONModel';
+import {
+	MODEL,
+	PROPS,
+} from 'ztle334fiori1/localService/mockService/types/local.enum';
 
 /**
  * @namespace ztle334fiori1.controller
@@ -33,12 +37,8 @@ export default class RolePanel extends Controller {
 	public onRoleConfirm(): void {
 		const oSelect = this.byId('roleSelect') as Select;
 		const sRole = oSelect.getSelectedKey();
-		console.log(sRole);
-
-		(this.getOwnerComponent().getModel('role') as JSONModel)?.setProperty(
-			'/current_role',
-			sRole
-		);
+		let oUser = this.getOwnerComponent().getModel(MODEL.User) as JSONModel;
+		oUser?.setProperty(PROPS.Current_role, sRole);
 
 		// Show feedback
 		MessageToast.show(`Role selected: ${sRole}`);

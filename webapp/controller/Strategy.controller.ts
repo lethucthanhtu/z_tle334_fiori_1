@@ -7,11 +7,11 @@ import FilterOperator from 'sap/ui/model/FilterOperator';
 import ListBinding from 'sap/ui/model/ListBinding';
 import Table from 'sap/m/Table';
 import ObjectHeader from 'sap/m/ObjectHeader';
-import {
-	type Employee,
-	type Subteam,
-	type Strategy,
-} from '../model/local.types';
+import type {
+	Employee,
+	Subteam,
+	Strategy,
+} from '../localService/mockService/types/local.types';
 import JSONModel from 'sap/ui/model/json/JSONModel';
 import Button from 'sap/m/Button';
 import Dialog from 'sap/m/Dialog';
@@ -21,7 +21,11 @@ import Context from 'sap/ui/model/Context';
 import BindingMode from 'sap/ui/model/BindingMode';
 import MessageBox, { Action } from 'sap/m/MessageBox';
 import Select from 'sap/m/Select';
-import History from 'sap/ui/core/History';
+import {
+	MODEL,
+	PROPS,
+	ROLE,
+} from 'ztle334fiori1/localService/mockService/types/local.enum';
 
 /**
  * @namespace ztle334fiori1.controller
@@ -49,14 +53,14 @@ export default class StrategyView extends Controller {
 		this._filter([]);
 
 		// Update ObjectHeader title with strategy name
-		const oStrategyModel = oView.getModel('strategy');
-		const aStrategies = (oStrategyModel?.getProperty('/strategies') ||
+		const oStrategyModel = oView.getModel(MODEL.Strategy);
+		const aStrategies = (oStrategyModel?.getProperty(PROPS.Strategies) ||
 			[]) as Strategy[];
 		const oStrategy = aStrategies.find(
 			(s: Strategy) => s.strat_id === sStratId
 		);
 		if (oStrategy)
-			(this.byId('_IDGenObjectHeader') as ObjectHeader).setTitle(
+			(this.byId('_IDStrategyHeader') as ObjectHeader).setTitle(
 				oStrategy.strat_name
 			);
 	}
@@ -76,31 +80,31 @@ export default class StrategyView extends Controller {
 	}
 
 	public onFitlerSearch(oEvent: Event): void {
-		const sQuery = (oEvent.getParameter('query') as String).trim();
+		const sQuery = (oEvent.getParameter('query') as string).trim();
 		this._filter([new Filter('email', FilterOperator.Contains, sQuery)]);
 	}
 
 	private _getUserRole(): string {
 		return this.getOwnerComponent()
-			.getModel('role')
-			?.getProperty('/current_role') as string;
+			.getModel(MODEL.User)
+			?.getProperty(PROPS.Current_role) as string;
 	}
 
 	private _getCurrentUser(): Employee | undefined {
 		const sEmpId = this.getOwnerComponent()
-			.getModel('role')
-			?.getProperty('/current_eid') as string;
+			.getModel(MODEL.User)
+			?.getProperty(PROPS.Current_eid) as string;
 		if (!sEmpId) return undefined;
 
-		const oModel = this.getView().getModel('employee') as JSONModel;
-		const aEmployees = oModel.getProperty('/employees') as Employee[];
+		const oModel = this.getView().getModel(MODEL.Employee) as JSONModel;
+		const aEmployees = oModel.getProperty(PROPS.Employees) as Employee[];
 
 		return aEmployees.find((e) => e.emp_ID === sEmpId);
 	}
 
 	private _checkAdminAccess(message?: string): boolean {
 		const sRole = this._getUserRole();
-		if (sRole.toLowerCase() !== 'admin') {
+		if (sRole.toLowerCase() !== ROLE.Admin) {
 			MessageToast.show(
 				message || 'You are not authorized to perform this action.'
 			);
@@ -124,7 +128,7 @@ export default class StrategyView extends Controller {
 			return;
 
 		const oView = this.getView();
-		const oModel = oView.getModel('employee') as JSONModel;
+		const oModel = oView.getModel(MODEL.Employee) as JSONModel;
 
 		let oEmployee: Employee;
 		let sPath: string | undefined;
@@ -133,7 +137,7 @@ export default class StrategyView extends Controller {
 		const oCurrentUser = this._getCurrentUser();
 		console.log(`Current user role: ${sRole}`, oCurrentUser);
 
-		if (sRole === 'employee' && oCurrentUser) {
+		if (sRole === ROLE.Employee && oCurrentUser) {
 			oEmployee = oCurrentUser;
 			sPath = `/employees/${oCurrentUser.emp_ID}`;
 			isCreate = false;
@@ -161,7 +165,7 @@ export default class StrategyView extends Controller {
 				return;
 			}
 
-			const oContext = oListItem.getBindingContext('employee') as Context;
+			const oContext = oListItem.getBindingContext(MODEL.Employee) as Context;
 			if (!oContext) {
 				MessageToast.show('No context found for edit.');
 				return;
@@ -212,10 +216,10 @@ export default class StrategyView extends Controller {
 		//   "Finance",
 		// ];
 		const VALID_SUBTEAMS = (
-			(this.getOwnerComponent().getModel('subteam') as JSONModel).getProperty(
-				'/subteams'
-			) as Subteam[]
-		).map((s: Subteam) => s.key);
+			(
+				this.getOwnerComponent().getModel(MODEL.Subteam) as JSONModel
+			).getProperty(PROPS.Subteams) as Subteam[]
+		).map((s) => s.key);
 
 		const errors: string[] = [];
 
@@ -292,8 +296,8 @@ export default class StrategyView extends Controller {
 		const oEmployee = oFormModel.getProperty('/employee') as Employee;
 		const isCreate = oFormModel.getProperty('/isCreate');
 
-		const oModel = oView.getModel('employee') as JSONModel;
-		const existingEmployees = oModel.getProperty('/employees') as Employee[];
+		const oModel = oView.getModel(MODEL.Employee) as JSONModel;
+		const existingEmployees = oModel.getProperty(PROPS.Employees) as Employee[];
 
 		const errors = this._validateEmployee(
 			oEmployee,
@@ -318,13 +322,13 @@ export default class StrategyView extends Controller {
 							);
 							if (index > -1) existingEmployees[index] = oEmployee;
 						}
-						oModel.setProperty('/employees', existingEmployees);
+						oModel.setProperty(PROPS.Employees, existingEmployees);
 						oModel.refresh(true);
 
 						MessageToast.show('Employee saved successfully.');
 						break;
 					case Action.CANCEL:
-						MessageToast.show('Cancel Add Employee');
+						MessageToast.show('Cancel add employee.');
 						break;
 					default:
 						break;
@@ -349,8 +353,8 @@ export default class StrategyView extends Controller {
 
 		const oView = this.getView();
 		const oTable = this.byId('employeeTable') as Table;
-		const oModel = oView.getModel('employee') as JSONModel;
-		const aEmployees = oModel.getProperty('/employees') as Employee[];
+		const oModel = oView.getModel(MODEL.Employee) as JSONModel;
+		const aEmployees = oModel.getProperty(PROPS.Employees) as Employee[];
 		const aSelectedContexts = oTable.getSelectedContexts(true);
 
 		if (!aSelectedContexts.length) {
@@ -368,7 +372,7 @@ export default class StrategyView extends Controller {
 			.sort((a, b) => b - a)
 			.forEach((idx) => aEmployees.splice(idx, 1));
 
-		oModel.setProperty('/employees', aEmployees);
+		oModel.setProperty(PROPS.Employees, aEmployees);
 		oModel.refresh(true);
 		oTable.removeSelections(true);
 		MessageToast.show('Selected employees deleted.');
@@ -390,23 +394,23 @@ export default class StrategyView extends Controller {
 			return;
 		}
 
-		const oContext = oListItem.getBindingContext('employee') as Context;
+		const oContext = oListItem.getBindingContext(MODEL.Employee) as Context;
 		if (!oContext) {
 			MessageToast.show('No context found for deletion.');
 			return;
 		}
 
 		const sPath = oContext.getPath(); // "/employees/2"
-		const oModel = oView.getModel('employee') as JSONModel;
+		const oModel = oView.getModel(MODEL.Employee) as JSONModel;
 
-		const aEmployees = oModel.getProperty('/employees') as Employee[];
+		const aEmployees = oModel.getProperty(PROPS.Employees) as Employee[];
 
 		const sIndex = sPath.split('/').pop();
 		const iIndex = sIndex ? parseInt(sIndex, 10) : -1;
 
 		if (iIndex > -1 && iIndex < aEmployees.length) {
 			aEmployees.splice(iIndex, 1);
-			oModel.setProperty('/employees', aEmployees);
+			oModel.setProperty(PROPS.Employees, aEmployees);
 			oModel.refresh(true);
 			MessageToast.show('Employee deleted (in-memory)');
 		} else MessageToast.show('Failed to delete employee. Invalid index.');
@@ -436,7 +440,7 @@ export default class StrategyView extends Controller {
 
 		// Convert Table items' data to correct type
 		const aVisibleEmployees: Employee[] = oTable.getItems().map((item) => {
-			const oContext = item.getBindingContext('employee');
+			const oContext = item.getBindingContext(MODEL.Employee);
 			return oContext?.getObject() as Employee;
 		});
 

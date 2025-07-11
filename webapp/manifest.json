@@ -70,19 +70,23 @@
       },
       "strategy": {
         "type": "sap.ui.model.json.JSONModel",
-        "uri": "model/strategies.json"
+        "uri": "localService/mockService/data/strategies.json"
       },
       "role": {
         "type": "sap.ui.model.json.JSONModel",
-        "uri": "model/roles.json"
+        "uri": "localService/mockService/data/roles.json"
       },
       "employee": {
         "type": "sap.ui.model.json.JSONModel",
-        "uri": "model/employees.json"
+        "uri": "localService/mockService/data/employees.json"
       },
       "subteam": {
         "type": "sap.ui.model.json.JSONModel",
-        "uri": "model/subteams.json"
+        "uri": "localService/mockService/data/subteams.json"
+      },
+      "user": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "localService/mockService/data/user.json"
       }
     },
     "resources": {

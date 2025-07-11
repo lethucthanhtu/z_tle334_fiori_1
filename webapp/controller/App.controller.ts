@@ -1,6 +1,6 @@
 import Controller from 'sap/ui/core/mvc/Controller';
-import JSONModel from 'sap/ui/model/json/JSONModel';
-import ODataModel from 'sap/ui/model/odata/v2/ODataModel';
+// import JSONModel from 'sap/ui/model/json/JSONModel';
+// import ODataModel from 'sap/ui/model/odata/v2/ODataModel';
 // import { ProductSet } from '../../generated/metadata/ProductSet';
 
 /**
@@ -9,8 +9,8 @@ import ODataModel from 'sap/ui/model/odata/v2/ODataModel';
 export default class App extends Controller {
 	/*eslint-disable @typescript-eslint/no-empty-function*/
 	public onInit(): void {
-		const oView = this.getView();
-		const oDataModel = oView.getModel() as ODataModel;
+		// const oView = this.getView();
+		// const oDataModel = oView.getModel() as ODataModel;
 
 		// console.log(
 		// 	oDataModel.read('/ProductSet', {

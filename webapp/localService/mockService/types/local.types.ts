@@ -1,3 +1,5 @@
+import { ROLE } from "./local.enum";
+
 export type Employee = {
   emp_ID: string;
   first_name: string;
@@ -24,4 +26,9 @@ export type Subteam = {
 export type Role = {
   key: string;
   text: string;
+}
+
+export type User = {
+  current_eid: string
+  current_role: ROLE.Admin | ROLE.Employee
 }
